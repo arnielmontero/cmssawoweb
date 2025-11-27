@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS - Complete Documentation</title>
+    <link rel="stylesheet" href="../dist/output.css?v=5">
+</head>
+<body style="margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; background: #fff;">
+    
+    <!-- Top Navigation Bar -->
+    <nav style="background: #563d7c; color: white; padding: 0.75rem 2rem; position: fixed; top: 0; left: 0; right: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="display: flex; justify-content: space-between; align-items: center; max-width: 100%;">
+            <div style="display: flex; align-items: center; gap: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg style="width: 30px; height: 30px; fill: white;" viewBox="0 0 24 24"><path d="M12,2L2,7L12,12L22,7L12,2M2,17L12,22L22,17V10L12,15L2,10V17Z"/></svg>
+                    <span style="font-weight: 700; font-size: 1.25rem;">Tailwind</span>
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: rgba(255,255,255,0.9); text-decoration: none; font-size: 14px;">Docs</a>
+                    <a href="#" style="color: rgba(255,255,255,0.9); text-decoration: none; font-size: 14px;">Components</a>
+                    <a href="login.html" style="color: rgba(255,255,255,0.9); text-decoration: none; font-size: 14px;">Examples</a>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <input type="search" placeholder="Search..." style="padding: 6px 12px; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; background: rgba(255,255,255,0.1); color: white; width: 200px; font-size: 14px;">
+                <span style="color: rgba(255,255,255,0.7); font-size: 14px;">v5.3</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Layout: Sidebar + Content -->
+    <div style="display: flex; margin-top: 56px;">
+        
+        <!-- Left Sidebar -->
+        <aside style="width: 260px; min-width: 260px; background: #f8f9fa; border-right: 1px solid #dee2e6; padding: 1.5rem 0; overflow-y: auto; position: fixed; top: 56px; left: 0; bottom: 0; height: calc(100vh - 56px);">
+            <nav style="padding: 0 1rem;">
+                
+                <!-- Layout Section -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #563d7c; font-size: 13px; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; padding: 0.25rem 0;">LAYOUT</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#containers" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px; transition: color 0.15s;">Containers</a></li>
+                        <li><a href="#grid" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Grid</a></li>
+                        <li><a href="#flexbox" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Flexbox</a></li>
+                        <li><a href="#spacing" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Spacing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Content Section -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #563d7c; font-size: 13px; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; padding: 0.25rem 0;">CONTENT</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#typography" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Typography</a></li>
+                        <li><a href="#images" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Images</a></li>
+                        <li><a href="#tables" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Tables</a></li>
+                        <li><a href="#lists" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Lists</a></li>
+                    </ul>
+                </div>
+
+                <!-- Components Section -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #563d7c; font-size: 13px; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; padding: 0.25rem 0;">COMPONENTS</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#buttons" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Buttons</a></li>
+                        <li><a href="#cards" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Cards</a></li>
+                        <li><a href="#badges" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Badges</a></li>
+                        <li><a href="#alerts" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Alerts</a></li>
+                        <li><a href="#modals" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Modals</a></li>
+                        <li><a href="#navbar" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Navbar</a></li>
+                        <li><a href="#breadcrumb" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Breadcrumb</a></li>
+                        <li><a href="#pagination" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Pagination</a></li>
+                        <li><a href="#progress" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Progress</a></li>
+                        <li><a href="#spinners" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Spinners</a></li>
+                        <li><a href="#tooltips" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Tooltips</a></li>
+                        <li><a href="#dropdown" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Dropdown</a></li>
+                    </ul>
+                </div>
+
+                <!-- Forms Section -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #563d7c; font-size: 13px; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; padding: 0.25rem 0;">FORMS</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#form-control" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Form control</a></li>
+                        <li><a href="#select" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Select</a></li>
+                        <li><a href="#checks-radios" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Checks & radios</a></li>
+                        <li><a href="#range" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Range</a></li>
+                    </ul>
+                </div>
+
+                <!-- Utilities Section -->
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: #563d7c; font-size: 13px; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; letter-spacing: 0.5px; padding: 0.25rem 0;">UTILITIES</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#colors" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Colors</a></li>
+                        <li><a href="#backgrounds" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Backgrounds</a></li>
+                        <li><a href="#borders" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Borders</a></li>
+                        <li><a href="#shadows" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Shadows</a></li>
+                        <li><a href="#sizing" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Sizing</a></li>
+                        <li><a href="#display" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Display</a></li>
+                        <li><a href="#position" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Position</a></li>
+                        <li><a href="#effects" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Effects</a></li>
+                        <li><a href="#transforms" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Transforms</a></li>
+                        <li><a href="#transitions" style="display: block; padding: 0.4rem 0; color: #495057; text-decoration: none; font-size: 14px;">Transitions</a></li>
+                    </ul>
+                </div>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main style="flex: 1; padding: 2rem 3rem; margin-left: 260px; max-width: 100%; background: white;">
+            
+            <!-- Hero/Introduction -->
+            <div style="margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid #dee2e6;">
+                <h1 style="font-size: 2.5rem; font-weight: 300; color: #212529; margin-bottom: 0.75rem;">Tailwind CSS</h1>
+                <p style="font-size: 1.125rem; color: #6c757d; line-height: 1.6; margin: 0;">
+                    A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup.
+                </p>
+            </div>
+
+            <!-- Containers Section -->
+            <section id="containers" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Containers</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Container classes are used to fix the width of an element and center it on the page.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="background: white; border: 2px dashed #d1d5db; padding: 1.5rem; border-radius: 6px; text-align: center; color: #6b7280;">
+                        <code style="background: #f3f4f6; padding: 0.25rem 0.5rem; border-radius: 4px; color: #dc2626;">container mx-auto</code> - Fixed width container
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"container mx-auto"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;!-- Content --&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Grid Section -->
+            <section id="grid" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Grid</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling grid layouts with CSS Grid.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                        <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 6px; text-align: center;">1</div>
+                        <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 6px; text-align: center;">2</div>
+                        <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 6px; text-align: center;">3</div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"grid grid-cols-3 gap-4"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;div&gt;</span>01<span style="color: #9ca3af;">&lt;/div&gt;</span>
+    <span style="color: #9ca3af;">&lt;div&gt;</span>02<span style="color: #9ca3af;">&lt;/div&gt;</span>
+    <span style="color: #9ca3af;">&lt;div&gt;</span>03<span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Flexbox Section -->
+            <section id="flexbox" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Flexbox</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling flex layouts and responsive designs.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: flex; justify-content: space-between; gap: 1rem;">
+                        <div style="background: #10b981; color: white; padding: 1.5rem; border-radius: 6px; flex: 1; text-align: center;">Flex 1</div>
+                        <div style="background: #10b981; color: white; padding: 1.5rem; border-radius: 6px; flex: 1; text-align: center;">Flex 2</div>
+                        <div style="background: #10b981; color: white; padding: 1.5rem; border-radius: 6px; flex: 1; text-align: center;">Flex 3</div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex justify-between gap-4"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex-1"</span><span style="color: #9ca3af;">&gt;</span>Item 1<span style="color: #9ca3af;">&lt;/div&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex-1"</span><span style="color: #9ca3af;">&gt;</span>Item 2<span style="color: #9ca3af;">&lt;/div&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex-1"</span><span style="color: #9ca3af;">&gt;</span>Item 3<span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Spacing Section -->
+            <section id="spacing" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Spacing</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling an element's padding and margin.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: #f3f4f6; border-bottom: 2px solid #e5e7eb;">
+                                <th style="padding: 0.75rem; text-align: left; color: #374151; font-weight: 600;">Class</th>
+                                <th style="padding: 0.75rem; text-align: left; color: #374151; font-weight: 600;">Properties</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid #e5e7eb;">
+                                <td style="padding: 0.75rem;"><code style="background: #fef3c7; padding: 0.25rem 0.5rem; border-radius: 4px; color: #92400e;">p-0</code></td>
+                                <td style="padding: 0.75rem; color: #6b7280;">padding: 0px;</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e5e7eb;">
+                                <td style="padding: 0.75rem;"><code style="background: #fef3c7; padding: 0.25rem 0.5rem; border-radius: 4px; color: #92400e;">p-4</code></td>
+                                <td style="padding: 0.75rem; color: #6b7280;">padding: 1rem;</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #e5e7eb;">
+                                <td style="padding: 0.75rem;"><code style="background: #fef3c7; padding: 0.25rem 0.5rem; border-radius: 4px; color: #92400e;">m-4</code></td>
+                                <td style="padding: 0.75rem; color: #6b7280;">margin: 1rem;</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem;"><code style="background: #fef3c7; padding: 0.25rem 0.5rem; border-radius: 4px; color: #92400e;">mx-auto</code></td>
+                                <td style="padding: 0.75rem; color: #6b7280;">margin-left: auto; margin-right: auto;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Typography Section -->
+            <section id="typography" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Typography</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling text size, weight, alignment, and more.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <h1 style="font-size: 3rem; font-weight: 800; color: #111827; margin-bottom: 0.5rem;">Heading 1</h1>
+                    <h2 style="font-size: 2.25rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem;">Heading 2</h2>
+                    <h3 style="font-size: 1.875rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">Heading 3</h3>
+                    <h4 style="font-size: 1.5rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">Heading 4</h4>
+                    <p style="font-size: 1rem; color: #6b7280; line-height: 1.6;">This is a regular paragraph with normal text.</p>
+                    <p style="font-size: 0.875rem; color: #9ca3af; line-height: 1.5;">This is smaller text for captions or footnotes.</p>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;h1</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"text-5xl font-extrabold"</span><span style="color: #9ca3af;">&gt;</span>Heading 1<span style="color: #9ca3af;">&lt;/h1&gt;</span>
+<span style="color: #9ca3af;">&lt;p</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"text-base text-gray-600"</span><span style="color: #9ca3af;">&gt;</span>Paragraph text<span style="color: #9ca3af;">&lt;/p&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Buttons Section -->
+            <section id="buttons" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Buttons</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Use Tailwind's custom button styles for actions in forms, dialogs, and more.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                        <button style="background: #7c3aed; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">Primary</button>
+                        <button style="background: #6b7280; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">Secondary</button>
+                        <button style="background: #10b981; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">Success</button>
+                        <button style="background: #ef4444; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">Danger</button>
+                        <button style="background: #f59e0b; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">Warning</button>
+                        <button style="background: transparent; color: #7c3aed; padding: 0.75rem 1.5rem; border-radius: 6px; border: 2px solid #7c3aed; font-weight: 600; cursor: pointer;">Outline</button>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;button</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-purple-600 text-white px-6 py-3 rounded"</span><span style="color: #9ca3af;">&gt;</span>
+    Primary
+<span style="color: #9ca3af;">&lt;/button&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Cards Section -->
+            <section id="cards" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Cards</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Flexible content containers with multiple variants and options.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 150px;"></div>
+                            <div style="padding: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">Card Title</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                        <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); height: 150px;"></div>
+                            <div style="padding: 1.5rem;">
+                                <h3 style="font-size: 1.25rem; font-weight: 600; color: #111827; margin-bottom: 0.5rem;">Card Title</h3>
+                                <p style="color: #6b7280; font-size: 0.875rem;">Some quick example text to build on the card title.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-white border rounded-lg shadow"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"p-6"</span><span style="color: #9ca3af;">&gt;</span>
+        <span style="color: #9ca3af;">&lt;h3&gt;</span>Card Title<span style="color: #9ca3af;">&lt;/h3&gt;</span>
+        <span style="color: #9ca3af;">&lt;p&gt;</span>Card content...<span style="color: #9ca3af;">&lt;/p&gt;</span>
+    <span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Badges Section -->
+            <section id="badges" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Badges</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Small count and labeling component.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
+                        <span style="background: #7c3aed; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">Primary</span>
+                        <span style="background: #6b7280; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">Secondary</span>
+                        <span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">Success</span>
+                        <span style="background: #ef4444; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">Danger</span>
+                        <span style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">Warning</span>
+                        <span style="background: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 600;">Info</span>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;span</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-purple-600 text-white px-3 py-1 rounded-full text-sm"</span><span style="color: #9ca3af;">&gt;</span>
+    Primary
+<span style="color: #9ca3af;">&lt;/span&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section id="alerts" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Alerts</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Provide contextual feedback messages for typical user actions.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="background: #dbeafe; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; color: #1e40af;">
+                            <strong style="font-weight: 600;">Info:</strong> A simple info alert—check it out!
+                        </div>
+                        <div style="background: #d1fae5; border-left: 4px solid #10b981; padding: 1rem 1.5rem; border-radius: 6px; color: #065f46;">
+                            <strong style="font-weight: 600;">Success:</strong> Your changes have been saved successfully!
+                        </div>
+                        <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1rem 1.5rem; border-radius: 6px; color: #92400e;">
+                            <strong style="font-weight: 600;">Warning:</strong> Please check your input before proceeding.
+                        </div>
+                        <div style="background: #fee2e2; border-left: 4px solid #ef4444; padding: 1rem 1.5rem; border-radius: 6px; color: #991b1b;">
+                            <strong style="font-weight: 600;">Danger:</strong> Something went wrong. Please try again.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-blue-50 border-l-4 border-blue-500 p-4 rounded"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;strong&gt;</span>Info:<span style="color: #9ca3af;">&lt;/strong&gt;</span> A simple info alert
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Forms Section -->
+            <section id="form-control" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Form Control</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Give textual form controls like inputs and textareas an upgrade with custom styles.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <form style="display: grid; gap: 1.5rem; max-width: 500px;">
+                        <div>
+                            <label style="display: block; color: #374151; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Email address</label>
+                            <input type="email" placeholder="Enter email" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.875rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; color: #374151; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Password</label>
+                            <input type="password" placeholder="Password" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.875rem;">
+                        </div>
+                        <div>
+                            <label style="display: block; color: #374151; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Message</label>
+                            <textarea rows="3" placeholder="Your message" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.875rem;"></textarea>
+                        </div>
+                        <button type="submit" style="background: #7c3aed; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">Submit</button>
+                    </form>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;input</span> <span style="color: #60a5fa;">type</span>=<span style="color: #34d399;">"email"</span> 
+       <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"w-full px-4 py-3 border rounded"</span> 
+       <span style="color: #60a5fa;">placeholder</span>=<span style="color: #34d399;">"Enter email"</span><span style="color: #9ca3af;">/&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Select Section -->
+            <section id="select" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Select</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Customize the native select with custom CSS.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="max-width: 500px;">
+                        <label style="display: block; color: #374151; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Select option</label>
+                        <select style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.875rem; background: white;">
+                            <option>Choose...</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;select</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"w-full px-4 py-3 border rounded"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;option&gt;</span>Choose...<span style="color: #9ca3af;">&lt;/option&gt;</span>
+<span style="color: #9ca3af;">&lt;/select&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Checks & Radios Section -->
+            <section id="checks-radios" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Checks & Radios</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Create consistent cross-browser and cross-device checkboxes and radios.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="max-width: 500px; display: grid; gap: 1rem;">
+                        <div>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="checkbox" style="width: 1rem; height: 1rem; cursor: pointer;">
+                                <span style="color: #374151;">Check me out</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="radio" style="width: 1rem; height: 1rem; cursor: pointer;">
+                                <span style="color: #374151;">Radio option 1</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                                <input type="radio" name="radio" style="width: 1rem; height: 1rem; cursor: pointer;">
+                                <span style="color: #374151;">Radio option 2</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;label</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex items-center gap-2"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;input</span> <span style="color: #60a5fa;">type</span>=<span style="color: #34d399;">"checkbox"</span><span style="color: #9ca3af;">/&gt;</span>
+    Check me out
+<span style="color: #9ca3af;">&lt;/label&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Range Section -->
+            <section id="range" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Range</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Use custom range inputs for consistent cross-browser styling.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="max-width: 500px;">
+                        <label style="display: block; color: #374151; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.875rem;">Range</label>
+                        <input type="range" min="0" max="100" value="50" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;input</span> <span style="color: #60a5fa;">type</span>=<span style="color: #34d399;">"range"</span> <span style="color: #60a5fa;">min</span>=<span style="color: #34d399;">"0"</span> <span style="color: #60a5fa;">max</span>=<span style="color: #34d399;">"100"</span><span style="color: #9ca3af;">/&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Colors Section -->
+            <section id="colors" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Colors</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Convey meaning through color with a handful of color utility classes.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
+                        <div style="background: #ef4444; color: white; padding: 2rem; border-radius: 6px; text-align: center; font-weight: 600;">Red</div>
+                        <div style="background: #f59e0b; color: white; padding: 2rem; border-radius: 6px; text-align: center; font-weight: 600;">Orange</div>
+                        <div style="background: #eab308; color: white; padding: 2rem; border-radius: 6px; text-align: center; font-weight: 600;">Yellow</div>
+                        <div style="background: #10b981; color: white; padding: 2rem; border-radius: 6px; text-align: center; font-weight: 600;">Green</div>
+                        <div style="background: #3b82f6; color: white; padding: 2rem; border-radius: 6px; text-align: center; font-weight: 600;">Blue</div>
+                        <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 6px; text-align: center; font-weight: 600;">Purple</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Borders Section -->
+            <section id="borders" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Borders</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling border width, color, and radius.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="background: white; border: 2px solid #7c3aed; padding: 1rem; text-align: center; color: #6b7280;">Border</div>
+                        <div style="background: white; border: 2px solid #7c3aed; padding: 1rem; border-radius: 6px; text-align: center; color: #6b7280;">Rounded</div>
+                        <div style="background: white; border: 2px solid #7c3aed; padding: 1rem; border-radius: 9999px; text-align: center; color: #6b7280;">Pill</div>
+                        <div style="background: white; border: 2px solid #7c3aed; padding: 1rem; border-radius: 12px; text-align: center; color: #6b7280;">Rounded Large</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Shadows Section -->
+            <section id="shadows" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Shadows</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling the box shadow of an element.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; gap: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); text-align: center; color: #6b7280;">Shadow Small</div>
+                        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; color: #6b7280;">Shadow</div>
+                        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; color: #6b7280;">Shadow Medium</div>
+                        <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); text-align: center; color: #6b7280;">Shadow Large</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Effects Section -->
+            <section id="effects" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Effects</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling opacity, transitions, and transforms.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 8px; flex: 1; text-align: center; opacity: 1;">100%</div>
+                            <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 8px; flex: 1; text-align: center; opacity: 0.75;">75%</div>
+                            <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 8px; flex: 1; text-align: center; opacity: 0.5;">50%</div>
+                            <div style="background: #7c3aed; color: white; padding: 2rem; border-radius: 8px; flex: 1; text-align: center; opacity: 0.25;">25%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Images Section -->
+            <section id="images" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Images</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for styling images with rounded corners, borders, and responsive sizing.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Default</div>
+                            <code style="background: #e5e7eb; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 12px;">w-40 h-40</code>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); margin: 0 auto 1rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Rounded</div>
+                            <code style="background: #e5e7eb; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 12px;">rounded-lg</code>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 150px; height: 150px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); margin: 0 auto 1rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;">Circle</div>
+                            <code style="background: #e5e7eb; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 12px;">rounded-full</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;img</span> <span style="color: #60a5fa;">src</span>=<span style="color: #34d399;">"..."</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"rounded-full w-40 h-40"</span><span style="color: #9ca3af;">/&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Tables Section -->
+            <section id="tables" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Tables</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Documentation and examples for opt-in styling of tables with Tailwind CSS, including search and sort functionality.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <!-- Search Box -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <input type="text" id="tableSearch" placeholder="Search table..." style="width: 100%; padding: 0.75rem 1rem; border: 1px solid #dee2e6; border-radius: 6px; font-size: 0.875rem;" onkeyup="searchTable()">
+                    </div>
+                    
+                    <div style="overflow-x: auto;">
+                        <table id="dataTable" style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden;">
+                            <thead style="background: #563d7c; color: white;">
+                                <tr>
+                                    <th onclick="sortTable(0)" style="padding: 1rem; text-align: left; font-weight: 600; cursor: pointer; user-select: none;">
+                                        # <span style="font-size: 0.75rem;">▼</span>
+                                    </th>
+                                    <th onclick="sortTable(1)" style="padding: 1rem; text-align: left; font-weight: 600; cursor: pointer; user-select: none;">
+                                        Name <span style="font-size: 0.75rem;">▼</span>
+                                    </th>
+                                    <th onclick="sortTable(2)" style="padding: 1rem; text-align: left; font-weight: 600; cursor: pointer; user-select: none;">
+                                        Email <span style="font-size: 0.75rem;">▼</span>
+                                    </th>
+                                    <th onclick="sortTable(3)" style="padding: 1rem; text-align: left; font-weight: 600; cursor: pointer; user-select: none;">
+                                        Role <span style="font-size: 0.75rem;">▼</span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 1rem; color: #495057;">1</td>
+                                    <td style="padding: 1rem; color: #495057;">John Doe</td>
+                                    <td style="padding: 1rem; color: #495057;">john@example.com</td>
+                                    <td style="padding: 1rem;"><span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem;">Admin</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6; background: #f8f9fa;">
+                                    <td style="padding: 1rem; color: #495057;">2</td>
+                                    <td style="padding: 1rem; color: #495057;">Jane Smith</td>
+                                    <td style="padding: 1rem; color: #495057;">jane@example.com</td>
+                                    <td style="padding: 1rem;"><span style="background: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem;">User</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 1rem; color: #495057;">3</td>
+                                    <td style="padding: 1rem; color: #495057;">Bob Johnson</td>
+                                    <td style="padding: 1rem; color: #495057;">bob@example.com</td>
+                                    <td style="padding: 1rem;"><span style="background: #f59e0b; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem;">Editor</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6; background: #f8f9fa;">
+                                    <td style="padding: 1rem; color: #495057;">4</td>
+                                    <td style="padding: 1rem; color: #495057;">Alice Brown</td>
+                                    <td style="padding: 1rem; color: #495057;">alice@example.com</td>
+                                    <td style="padding: 1rem;"><span style="background: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem;">User</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #dee2e6;">
+                                    <td style="padding: 1rem; color: #495057;">5</td>
+                                    <td style="padding: 1rem; color: #495057;">Charlie Wilson</td>
+                                    <td style="padding: 1rem; color: #495057;">charlie@example.com</td>
+                                    <td style="padding: 1rem;"><span style="background: #10b981; color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem;">Admin</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <script>
+                // Sort table functionality
+                function sortTable(columnIndex) {
+                    const table = document.getElementById("dataTable");
+                    const tbody = table.tBodies[0];
+                    const rows = Array.from(tbody.rows);
+                    const isAscending = tbody.getAttribute('data-sort-dir') !== 'asc';
+                    
+                    rows.sort((rowA, rowB) => {
+                        const cellA = rowA.cells[columnIndex].textContent.trim();
+                        const cellB = rowB.cells[columnIndex].textContent.trim();
+                        
+                        // Check if numeric
+                        const numA = parseFloat(cellA);
+                        const numB = parseFloat(cellB);
+                        
+                        if (!isNaN(numA) && !isNaN(numB)) {
+                            return isAscending ? numA - numB : numB - numA;
+                        }
+                        
+                        return isAscending 
+                            ? cellA.localeCompare(cellB)
+                            : cellB.localeCompare(cellA);
+                    });
+                    
+                    rows.forEach(row => tbody.appendChild(row));
+                    tbody.setAttribute('data-sort-dir', isAscending ? 'asc' : 'desc');
+                    
+                    // Update stripe styling
+                    rows.forEach((row, index) => {
+                        row.style.background = index % 2 === 1 ? '#f8f9fa' : 'transparent';
+                    });
+                }
+                
+                // Search table functionality
+                function searchTable() {
+                    const input = document.getElementById("tableSearch");
+                    const filter = input.value.toLowerCase();
+                    const table = document.getElementById("dataTable");
+                    const tbody = table.tBodies[0];
+                    const rows = tbody.rows;
+                    
+                    for (let i = 0; i < rows.length; i++) {
+                        const cells = rows[i].cells;
+                        let found = false;
+                        
+                        for (let j = 0; j < cells.length; j++) {
+                            const cellText = cells[j].textContent.toLowerCase();
+                            if (cellText.includes(filter)) {
+                                found = true;
+                                break;
+                            }
+                        }
+                        
+                        rows[i].style.display = found ? '' : 'none';
+                    }
+                }
+                </script>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;!-- Search Input --&gt;</span>
+<span style="color: #9ca3af;">&lt;input</span> <span style="color: #60a5fa;">type</span>=<span style="color: #34d399;">"text"</span> <span style="color: #60a5fa;">onkeyup</span>=<span style="color: #34d399;">"searchTable()"</span><span style="color: #9ca3af;">/&gt;</span>
+
+<span style="color: #9ca3af;">&lt;table&gt;</span>
+    <span style="color: #9ca3af;">&lt;thead&gt;</span>
+        <span style="color: #9ca3af;">&lt;tr&gt;</span>
+            <span style="color: #9ca3af;">&lt;th</span> <span style="color: #60a5fa;">onclick</span>=<span style="color: #34d399;">"sortTable(0)"</span><span style="color: #9ca3af;">&gt;</span>Name ▼<span style="color: #9ca3af;">&lt;/th&gt;</span>
+        <span style="color: #9ca3af;">&lt;/tr&gt;</span>
+    <span style="color: #9ca3af;">&lt;/thead&gt;</span>
+<span style="color: #9ca3af;">&lt;/table&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Lists Section -->
+            <section id="lists" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Lists</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Style ordered and unordered lists with various utilities.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h4 style="font-weight: 600; color: #212529; margin-bottom: 1rem;">Unordered List</h4>
+                            <ul style="list-style: disc; padding-left: 1.5rem; color: #495057; line-height: 1.8;">
+                                <li>First item</li>
+                                <li>Second item</li>
+                                <li>Third item
+                                    <ul style="list-style: circle; padding-left: 1.5rem; margin-top: 0.5rem;">
+                                        <li>Nested item 1</li>
+                                        <li>Nested item 2</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="font-weight: 600; color: #212529; margin-bottom: 1rem;">Ordered List</h4>
+                            <ol style="list-style: decimal; padding-left: 1.5rem; color: #495057; line-height: 1.8;">
+                                <li>First step</li>
+                                <li>Second step</li>
+                                <li>Third step</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navbar Section -->
+            <section id="navbar" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Navbar</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Responsive navigation header with branding, navigation, and more.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <nav style="background: white; border: 1px solid #dee2e6; border-radius: 8px; padding: 1rem 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="font-weight: 700; font-size: 1.25rem; color: #563d7c;">Brand</div>
+                            <div style="display: flex; gap: 1.5rem;">
+                                <a href="#" style="color: #495057; text-decoration: none; font-weight: 500;">Home</a>
+                                <a href="#" style="color: #495057; text-decoration: none; font-weight: 500;">About</a>
+                                <a href="#" style="color: #495057; text-decoration: none; font-weight: 500;">Services</a>
+                                <a href="#" style="color: #563d7c; text-decoration: none; font-weight: 600;">Contact</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;nav</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-white shadow"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex justify-between items-center"</span><span style="color: #9ca3af;">&gt;</span>
+        <span style="color: #9ca3af;">&lt;a</span> <span style="color: #60a5fa;">href</span>=<span style="color: #34d399;">"#"</span><span style="color: #9ca3af;">&gt;</span>Brand<span style="color: #9ca3af;">&lt;/a&gt;</span>
+    <span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/nav&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Breadcrumb Section -->
+            <section id="breadcrumb" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Breadcrumb</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Indicate the current page's location within a navigational hierarchy.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <nav style="display: flex; align-items: center; gap: 0.5rem; color: #6c757d; font-size: 0.875rem;">
+                        <a href="#" style="color: #563d7c; text-decoration: none;">Home</a>
+                        <span>/</span>
+                        <a href="#" style="color: #563d7c; text-decoration: none;">Library</a>
+                        <span>/</span>
+                        <span style="color: #495057;">Data</span>
+                    </nav>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;nav</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex gap-2"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;a</span> <span style="color: #60a5fa;">href</span>=<span style="color: #34d399;">"#"</span><span style="color: #9ca3af;">&gt;</span>Home<span style="color: #9ca3af;">&lt;/a&gt;</span>
+    <span style="color: #9ca3af;">&lt;span&gt;</span>/<span style="color: #9ca3af;">&lt;/span&gt;</span>
+    <span style="color: #9ca3af;">&lt;span&gt;</span>Current<span style="color: #9ca3af;">&lt;/span&gt;</span>
+<span style="color: #9ca3af;">&lt;/nav&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Pagination Section -->
+            <section id="pagination" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Pagination</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Navigation for paginated content with customizable appearance.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <nav style="display: flex; gap: 0.5rem;">
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: white; border-radius: 4px; color: #563d7c; cursor: pointer;">Previous</button>
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #563d7c; background: #563d7c; border-radius: 4px; color: white; cursor: pointer;">1</button>
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: white; border-radius: 4px; color: #495057; cursor: pointer;">2</button>
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: white; border-radius: 4px; color: #495057; cursor: pointer;">3</button>
+                        <button style="padding: 0.5rem 1rem; border: 1px solid #dee2e6; background: white; border-radius: 4px; color: #563d7c; cursor: pointer;">Next</button>
+                    </nav>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;nav</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"flex gap-2"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;button&gt;</span>Previous<span style="color: #9ca3af;">&lt;/button&gt;</span>
+    <span style="color: #9ca3af;">&lt;button&gt;</span>1<span style="color: #9ca3af;">&lt;/button&gt;</span>
+    <span style="color: #9ca3af;">&lt;button&gt;</span>Next<span style="color: #9ca3af;">&lt;/button&gt;</span>
+<span style="color: #9ca3af;">&lt;/nav&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section id="progress" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Progress</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Display progress indicators for loading states or multi-step processes.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div>
+                            <div style="background: #e5e7eb; height: 1rem; border-radius: 9999px; overflow: hidden;">
+                                <div style="background: #563d7c; width: 25%; height: 100%;"></div>
+                            </div>
+                            <p style="color: #6c757d; font-size: 0.875rem; margin-top: 0.5rem;">25% Complete</p>
+                        </div>
+                        <div>
+                            <div style="background: #e5e7eb; height: 1rem; border-radius: 9999px; overflow: hidden;">
+                                <div style="background: #10b981; width: 50%; height: 100%;"></div>
+                            </div>
+                            <p style="color: #6c757d; font-size: 0.875rem; margin-top: 0.5rem;">50% Complete</p>
+                        </div>
+                        <div>
+                            <div style="background: #e5e7eb; height: 1rem; border-radius: 9999px; overflow: hidden;">
+                                <div style="background: #3b82f6; width: 75%; height: 100%;"></div>
+                            </div>
+                            <p style="color: #6c757d; font-size: 0.875rem; margin-top: 0.5rem;">75% Complete</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-gray-200 rounded-full h-4"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-blue-600 h-4 rounded-full"</span> <span style="color: #60a5fa;">style</span>=<span style="color: #34d399;">"width: 75%"</span><span style="color: #9ca3af;">&gt;&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Spinners Section -->
+            <section id="spinners" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Spinners</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Loading spinners to indicate loading state in your projects.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: flex; gap: 2rem; align-items: center; justify-content: center;">
+                        <div style="width: 3rem; height: 3rem; border: 4px solid #e5e7eb; border-top-color: #563d7c; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        <div style="width: 2.5rem; height: 2.5rem; border: 4px solid #e5e7eb; border-top-color: #10b981; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        <div style="width: 2rem; height: 2rem; border: 4px solid #e5e7eb; border-top-color: #ef4444; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    </div>
+                </div>
+                <style>
+                @keyframes spin {
+                    to { transform: rotate(360deg); }
+                }
+                </style>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"animate-spin rounded-full h-12 w-12 border-4 border-gray-200 border-t-purple-600"</span><span style="color: #9ca3af;">&gt;&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Tooltips Section -->
+            <section id="tooltips" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Tooltips</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Custom tooltips for displaying additional information on hover.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 3rem 2rem; margin-bottom: 1rem;">
+                    <div style="display: flex; gap: 2rem; justify-content: center;">
+                        <div style="position: relative; display: inline-block;">
+                            <button style="background: #563d7c; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; cursor: pointer;">Hover me (Top)</button>
+                            <div style="position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 0.5rem; padding: 0.5rem 1rem; background: #1f2937; color: white; border-radius: 6px; font-size: 0.875rem; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s;">
+                                Tooltip on top
+                            </div>
+                        </div>
+                        <div style="position: relative; display: inline-block;">
+                            <button style="background: #10b981; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; cursor: pointer;">Hover me (Bottom)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"relative group"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;button&gt;</span>Hover<span style="color: #9ca3af;">&lt;/button&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"hidden group-hover:block absolute"</span><span style="color: #9ca3af;">&gt;</span>Tooltip<span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Dropdown Section -->
+            <section id="dropdown" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Dropdown</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Toggle contextual overlays for displaying lists of links and more.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem 2rem 10rem 2rem; margin-bottom: 1rem;">
+                    <div style="position: relative; display: inline-block;">
+                        <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block'" style="background: #563d7c; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+                            Dropdown
+                            <svg style="width: 1rem; height: 1rem; fill: white;" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/></svg>
+                        </button>
+                        <div style="display: none; position: absolute; top: 100%; left: 0; margin-top: 0.5rem; background: white; border: 1px solid #dee2e6; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); min-width: 200px; z-index: 10;">
+                            <a href="#" style="display: block; padding: 0.75rem 1rem; color: #495057; text-decoration: none; border-bottom: 1px solid #f8f9fa;">Action</a>
+                            <a href="#" style="display: block; padding: 0.75rem 1rem; color: #495057; text-decoration: none; border-bottom: 1px solid #f8f9fa;">Another action</a>
+                            <a href="#" style="display: block; padding: 0.75rem 1rem; color: #495057; text-decoration: none;">Something else</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"relative"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;button&gt;</span>Dropdown<span style="color: #9ca3af;">&lt;/button&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"absolute bg-white shadow"</span><span style="color: #9ca3af;">&gt;</span>
+        <span style="color: #9ca3af;">&lt;a</span> <span style="color: #60a5fa;">href</span>=<span style="color: #34d399;">"#"</span><span style="color: #9ca3af;">&gt;</span>Item<span style="color: #9ca3af;">&lt;/a&gt;</span>
+    <span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Modals Section -->
+            <section id="modals" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Modals</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Use modals to add dialogs for lightboxes, user notifications, or completely custom content.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="max-width: 500px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); overflow: hidden;">
+                        <div style="background: #563d7c; color: white; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                            <h3 style="font-size: 1.25rem; font-weight: 600; margin: 0;">Modal Title</h3>
+                            <button style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; line-height: 1;">×</button>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <p style="color: #495057; line-height: 1.6; margin: 0 0 1rem 0;">This is the modal body content. You can add any content here including forms, images, or text.</p>
+                            <p style="color: #6c757d; font-size: 0.875rem; margin: 0;">Modal content goes here...</p>
+                        </div>
+                        <div style="background: #f8f9fa; padding: 1rem 1.5rem; display: flex; justify-content: flex-end; gap: 0.75rem; border-top: 1px solid #dee2e6;">
+                            <button style="background: #6c757d; color: white; padding: 0.5rem 1rem; border-radius: 4px; border: none; cursor: pointer; font-size: 0.875rem;">Close</button>
+                            <button style="background: #563d7c; color: white; padding: 0.5rem 1rem; border-radius: 4px; border: none; cursor: pointer; font-size: 0.875rem;">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-white rounded-lg shadow-lg"</span><span style="color: #9ca3af;">&gt;</span>
+        <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"p-6"</span><span style="color: #9ca3af;">&gt;</span>Modal content<span style="color: #9ca3af;">&lt;/div&gt;</span>
+    <span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Backgrounds Section -->
+            <section id="backgrounds" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Backgrounds</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling background colors and gradients.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 2rem; border-radius: 6px; color: white; text-align: center; font-weight: 600;">Gradient 1</div>
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 2rem; border-radius: 6px; color: white; text-align: center; font-weight: 600;">Gradient 2</div>
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 2rem; border-radius: 6px; color: white; text-align: center; font-weight: 600;">Gradient 3</div>
+                        <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); padding: 2rem; border-radius: 6px; color: white; text-align: center; font-weight: 600;">Gradient 4</div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"bg-gradient-to-r from-purple-400 to-pink-600"</span><span style="color: #9ca3af;">&gt;</span>
+    Gradient background
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Sizing Section -->
+            <section id="sizing" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Sizing</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling the width and height of elements.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="width: 25%; background: #563d7c; color: white; padding: 1rem; border-radius: 6px; text-align: center;">w-1/4</div>
+                        <div style="width: 50%; background: #3b82f6; color: white; padding: 1rem; border-radius: 6px; text-align: center;">w-1/2</div>
+                        <div style="width: 75%; background: #10b981; color: white; padding: 1rem; border-radius: 6px; text-align: center;">w-3/4</div>
+                        <div style="width: 100%; background: #f59e0b; color: white; padding: 1rem; border-radius: 6px; text-align: center;">w-full</div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"w-1/2"</span><span style="color: #9ca3af;">&gt;</span>Half width<span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"w-full"</span><span style="color: #9ca3af;">&gt;</span>Full width<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Display Section -->
+            <section id="display" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Display</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling the display box type of an element.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div>
+                            <p style="color: #495057; margin-bottom: 0.5rem; font-weight: 600;">Block</p>
+                            <div style="display: block; background: #563d7c; color: white; padding: 1rem; border-radius: 6px;">display: block</div>
+                        </div>
+                        <div>
+                            <p style="color: #495057; margin-bottom: 0.5rem; font-weight: 600;">Inline-Block</p>
+                            <div style="display: inline-block; background: #3b82f6; color: white; padding: 1rem; border-radius: 6px; margin-right: 0.5rem;">inline-block</div>
+                            <div style="display: inline-block; background: #10b981; color: white; padding: 1rem; border-radius: 6px;">inline-block</div>
+                        </div>
+                        <div>
+                            <p style="color: #495057; margin-bottom: 0.5rem; font-weight: 600;">Hidden</p>
+                            <div style="display: none; background: #ef4444; color: white; padding: 1rem; border-radius: 6px;">display: none (hidden)</div>
+                            <p style="color: #6c757d; font-size: 0.875rem;">Element above is hidden with display: none</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"block"</span><span style="color: #9ca3af;">&gt;</span>Block<span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"hidden"</span><span style="color: #9ca3af;">&gt;</span>Hidden<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Position Section -->
+            <section id="position" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Position</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling how an element is positioned in the DOM.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="position: relative; background: #e5e7eb; height: 200px; border-radius: 6px; padding: 1rem;">
+                        <div style="position: absolute; top: 10px; left: 10px; background: #563d7c; color: white; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.875rem;">Absolute Top-Left</div>
+                        <div style="position: absolute; top: 10px; right: 10px; background: #3b82f6; color: white; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.875rem;">Absolute Top-Right</div>
+                        <div style="position: absolute; bottom: 10px; left: 10px; background: #10b981; color: white; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.875rem;">Absolute Bottom-Left</div>
+                        <div style="position: absolute; bottom: 10px; right: 10px; background: #ef4444; color: white; padding: 0.75rem 1rem; border-radius: 4px; font-size: 0.875rem;">Absolute Bottom-Right</div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"relative"</span><span style="color: #9ca3af;">&gt;</span>
+    <span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"absolute top-0 left-0"</span><span style="color: #9ca3af;">&gt;</span>Positioned<span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Transforms Section -->
+            <section id="transforms" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Transforms</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for applying transforms like scale, rotate, translate, and skew.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; text-align: center;">
+                        <div>
+                            <div style="background: #563d7c; color: white; padding: 2rem; border-radius: 6px; transform: scale(1.1);">Scale 1.1</div>
+                        </div>
+                        <div>
+                            <div style="background: #3b82f6; color: white; padding: 2rem; border-radius: 6px; transform: rotate(5deg);">Rotate 5°</div>
+                        </div>
+                        <div>
+                            <div style="background: #10b981; color: white; padding: 2rem; border-radius: 6px; transform: skewY(-3deg);">Skew Y</div>
+                        </div>
+                        <div>
+                            <div style="background: #f59e0b; color: white; padding: 2rem; border-radius: 6px; transform: translateY(-5px);">Translate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"scale-110"</span><span style="color: #9ca3af;">&gt;</span>Scaled<span style="color: #9ca3af;">&lt;/div&gt;</span>
+<span style="color: #9ca3af;">&lt;div</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"rotate-6"</span><span style="color: #9ca3af;">&gt;</span>Rotated<span style="color: #9ca3af;">&lt;/div&gt;</span></pre>
+                </div>
+            </section>
+
+            <!-- Transitions Section -->
+            <section id="transitions" style="margin-bottom: 3rem; scroll-margin-top: 70px;">
+                <h2 style="font-size: 2rem; font-weight: 500; color: #212529; margin-bottom: 0.75rem;">Transitions</h2>
+                <p style="color: #6c757d; margin-bottom: 1.5rem; line-height: 1.6; font-size: 1rem;">
+                    Utilities for controlling transitions and animations on hover or focus.
+                </p>
+                
+                <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; margin-bottom: 1rem;">
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <button style="background: #563d7c; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Hover Scale</button>
+                        <button style="background: #10b981; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">Hover Color</button>
+                        <button style="background: #3b82f6; color: white; padding: 0.75rem 1.5rem; border-radius: 6px; border: none; cursor: pointer; transition: all 0.3s;" onmouseover="this.style.boxShadow='0 10px 15px rgba(0,0,0,0.2)'" onmouseout="this.style.boxShadow='none'">Hover Shadow</button>
+                    </div>
+                </div>
+
+                <div style="background: #1f2937; color: #e5e7eb; border-radius: 8px; padding: 1.5rem; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; margin-bottom: 2rem;">
+<pre style="margin: 0;"><span style="color: #9ca3af;">&lt;button</span> <span style="color: #60a5fa;">class</span>=<span style="color: #34d399;">"transition hover:scale-105"</span><span style="color: #9ca3af;">&gt;</span>
+    Hover me
+<span style="color: #9ca3af;">&lt;/button&gt;</span></pre>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
